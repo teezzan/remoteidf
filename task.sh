@@ -1,5 +1,7 @@
-git clone https://github.com/espressif/esp-idf-template.git
-mv send.py ./esp-idf-template
-cd ./esp-idf-template
+git clone https://github.com/teezzan/blink_idf.git
+mv send.py ./blink_idf
+cd ./blink_idf
 idf.py build
+mv *.bin  build.bin
 python3 send.py
+

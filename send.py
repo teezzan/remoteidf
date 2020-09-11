@@ -1,5 +1,6 @@
 import os
 import zipfile
+import requests
 
 def zipdir(path, ziph):
     # ziph is zipfile handle
@@ -8,6 +9,9 @@ def zipdir(path, ziph):
             ziph.write(os.path.join(root, file))
 
 if __name__ == '__main__':
-    zipf = zipfile.ZipFile('build.zip', 'w', zipfile.ZIP_DEFLATED)
-    zipdir('build/', zipf)
-    zipf.close()
+    zipfile.ZipFile('build.zip', mode='w').write("build.bin")
+    with open('build.zip', 'rb') as f:
+        r = ('http://teetodo.herokuapp.com/api/file', files={'file': f})
+
+
+    
