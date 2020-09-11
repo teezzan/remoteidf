@@ -9,8 +9,8 @@ def zipdir(path, ziph):
             ziph.write(os.path.join(root, file))
 
 if __name__ == '__main__':
-    zipfile.ZipFile('build.zip', mode='w').write("build.bin")
-    with open('build.zip', 'rb') as f:
+    # zipfile.ZipFile('build.zip', mode='w').write("build.bin")
+    with open('build.bin', 'rb') as f:
         r = ('http://teetodo.herokuapp.com/api/file', {'file': f})
 
 
