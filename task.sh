@@ -3,5 +3,7 @@ mv send.py ./blink_idf
 cd ./blink_idf
 idf.py build
 mv *.bin  build.bin
+pip3 install requests
 python3 send.py
+exit
 
